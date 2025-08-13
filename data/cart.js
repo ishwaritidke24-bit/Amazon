@@ -1,6 +1,6 @@
 export let cart = JSON.parse(localStorage.getItem('cart')); 
 
-if(!null){ //default value so it dont become null
+if(!cart){ //default value so it dont become null
     cart = [{
     productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
     quantity: 2,
@@ -58,6 +58,6 @@ export function updateDeliveryOption(productId, deliveryOptionId){
         matchingItem = cartItem;
       }
     });
-    matchingItem.deliveryOptionId = deliveryOptionId;
+    matchingItem.deliveryOptionsId = deliveryOptionId;
     saveToStorage();
 }
