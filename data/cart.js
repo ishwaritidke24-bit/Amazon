@@ -1,6 +1,9 @@
-export let cart = JSON.parse(localStorage.getItem('cart')); 
+export let cart;
 
-if(!cart){ //default value so it dont become null
+loadFromStorage();
+export function loadFromStorage(){
+  cart = JSON.parse(localStorage.getItem('cart')); 
+  if(!cart){ //default value so it dont become null
     cart = [{
     productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
     quantity: 2,
@@ -12,7 +15,7 @@ if(!cart){ //default value so it dont become null
   }];
 }
 
-
+}
 
 function saveToStorage(){
   localStorage.setItem('cart', JSON.stringify(cart));
